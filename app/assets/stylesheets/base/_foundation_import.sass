@@ -1,0 +1,70 @@
+// rem-calc(), etc.
+@import foundation/functions
+
+// dimensions
+$rem-base: $base-font-size
+$padding: rem-calc(15)
+
+// -- foundation settings ---
+
+$include-open-sans: false
+
+// breadcrumb
+$crumb-slash: ">"
+
+// button
+$button-font-weight: bold
+
+$input-border-width: 2px
+$input-prefix-border-size: 2px
+
+// label
+$include-html-label-classes: false
+// $label-font-sizing: $base-font-size
+// $label-font-weight: bold
+// $label-font-color: $font-color
+// $label-font-color-alt: $light-font-color
+
+$global-radius: 10px
+
+// mixin to mimick the behavior of foundation in our own stylesheets
+=foundation-hover-background-color($color)
+  background-color: scale-color($color, $lightness: $button-function-factor)
+
+// concerning import order, refer to https://github.com/zurb/foundation-rails/blob/master/vendor/assets/stylesheets/foundation.scss
+
+@import foundation/components/grid
+@import foundation/components/accordion
+@import foundation/components/alert-boxes
+@import foundation/components/block-grid
+@import foundation/components/breadcrumbs
+// @import foundation/components/button-groups
+@import foundation/components/buttons
+@import foundation/components/clearing
+@import foundation/components/dropdown
+@import foundation/components/forms
+@import foundation/components/inline-lists
+// @import foundation/components/joyride
+// @import foundation/components/keystrokes
+@import foundation/components/labels
+// @import foundation/components/magellan
+// @import foundation/components/orbit
+//@import foundation/components/pagination
+// @import foundation/components/panels
+// @import foundation/components/pricing-tables
+// @import foundation/components/progress-bars
+// @import foundation/components/range-slider
+// @import foundation/components/reveal
+// @import foundation/components/side-nav
+// @import foundation/components/split-buttons
+// @import foundation/components/sub-nav
+// @import foundation/components/switch
+@import foundation/components/tables
+@import foundation/components/top-bar
+// @import foundation/components/tabs
+// @import foundation/components/thumbs
+@import foundation/components/type
+// @import foundation/components/tooltips
+// @import foundation/components/offcanvas
+@import foundation/components/visibility
+

@@ -15,6 +15,9 @@ gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'rails_admin'
 
+gem 'carrierwave'
+gem 'fog'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -39,3 +42,7 @@ group :development, :test do
   gem 'spring'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers', require: false
+end
