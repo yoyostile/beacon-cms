@@ -18,6 +18,7 @@ gem 'rails_admin'
 
 gem 'carrierwave'
 gem 'fog'
+gem 'rmagick'
 
 gem 'rails_12factor'
 
