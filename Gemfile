@@ -18,6 +18,8 @@ gem 'rails_admin'
 gem 'carrierwave'
 gem 'fog'
 
+gem 'rails_12factor'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
