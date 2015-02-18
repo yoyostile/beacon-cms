@@ -5,5 +5,7 @@ class Entry < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-
+  def as_json
+    super(only: [ :image, :headline, :description, :uuid, :major, :minor ])
+  end
 end
