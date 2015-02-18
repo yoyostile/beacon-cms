@@ -5,11 +5,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body{ class: ["#{controller_name}_controller", "#{controller_name}_#{action_name}"] }
-    = render 'layouts/header'
     - flash.each do |key, value|
       = content_tag(:div, data: { alert: '' }, class: ['a-flash alert-box', key]) do
         = (value + link_to('×', '#', class: :close)).html_safe
-
+    = render 'layouts/header'
     = yield
     = render 'layouts/footer'
 
