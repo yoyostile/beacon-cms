@@ -23,5 +23,4 @@ class EntriesController < ApplicationController
     headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Request-Method'] = '*'
   end
-
 end
