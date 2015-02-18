@@ -17,3 +17,4 @@
 /tmp
 /public/images/*
 /public/uploads/*
+.DS_Store
