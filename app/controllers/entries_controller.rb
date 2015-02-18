@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  after_filter :set_access_control_headers, only: :show
 
   def show
     @entry = Entry.find_by(uuid: params[:uuid], major: params[:major], minor: params[:minor])
@@ -14,6 +15,13 @@ class EntriesController < ApplicationController
         format.json { render json: { status: 'failed', error: 'Not found' } }
       end
     end
+  end
+
+  private
+
+  def set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Request-Method'] = '*'
   end
 
 end
