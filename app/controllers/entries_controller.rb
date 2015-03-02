@@ -17,6 +17,22 @@ class EntriesController < ApplicationController
     end
   end
 
+  def index
+    @entries = Entry.all
+
+    if @entries
+      respond_to do |format|
+        format.html
+        format.json { render json: { status: 'success', entries: @entries.as_json } }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to root_path, alert: 'No entries found!' }
+        format.json { render json: { status: 'failed', error: 'No entries found' } }
+      end
+    end
+  end
+
   private
 
   def set_access_control_headers
