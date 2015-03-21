@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   after_filter :set_access_control_headers, only: [:show, :index]
 
   def show
-    @entry = Entry.find_by(uuid: params[:uuid], major: params[:major], minor: params[:minor])
+    @entry = Entry.find_by(uuid: params[:uuid].downcase, major: params[:major], minor: params[:minor])
 
     if @entry
       respond_to do |format|
