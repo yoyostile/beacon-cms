@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204132105) do
+ActiveRecord::Schema.define(version: 20150401090431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,5 +29,15 @@ ActiveRecord::Schema.define(version: 20150204132105) do
   end
 
   add_index "entries", ["uuid", "major", "minor"], name: "index_entries_on_uuid_and_major_and_minor", using: :btree
+
+  create_table "event_logs", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "uuid"
+    t.string   "major"
+    t.string   "minor"
+    t.string   "proximity"
+    t.string   "rssi"
+  end
 
 end
