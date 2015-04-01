@@ -1,4 +1,5 @@
 class EventLogsController < ApplicationController
+  skip_before_action :verify_authenticity_token, if: :json_request?
 
   def create
     @event_log = EventLog.new(event_params)
@@ -30,5 +31,8 @@ class EventLogsController < ApplicationController
     )
   end
 
+  def json_request?
+    request.format.json?
+  end
 
 end
