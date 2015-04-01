@@ -22,7 +22,7 @@ class EventLogsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(
+    params.require(:event_log).permit(
       :uuid,
       :major,
       :minor,
