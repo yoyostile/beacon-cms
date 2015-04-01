@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require heatmap
+//= require_treet app/
 //= require_tree .

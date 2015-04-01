@@ -8,4 +8,8 @@ class Entry < ActiveRecord::Base
   def as_json
     super(only: [ :image, :headline, :description, :uuid, :major, :minor, :url ])
   end
+
+  def event_logs
+    EventLog.where(uuid: uuid, major: major, minor: minor)
+  end
 end
