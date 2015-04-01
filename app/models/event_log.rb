@@ -6,7 +6,15 @@ class EventLog < ActiveRecord::Base
 
   class << self
     def heatmap_data
-      EventLog.all.map(&:entries).flatten.map{ |entry| { x: entry.x.to_f, y: entry.y.to_f, value: 10 } }
+      all = EventLog.all.map(&:entries).flatten
+      single = all.uniq
+      res = single.inject({}) do |hash, s|
+        hash[:x] = s.x.to_f
+        hash[:y] = s.y.to_f
+        hash[:value] = all.select{ |a| a.uuid == s.uuid && a.major == s.major && a.minor == s.minor }.count
+        hash
+      end
+      res
     end
   end
 
