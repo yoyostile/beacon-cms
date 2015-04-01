@@ -1,7 +1,7 @@
 class EventLog < ActiveRecord::Base
 
   def entries
-    Entry.where(uuid: uuid, major: major, minor: minor)
+    Entry.where(uuid: uuid.downcase, major: major, minor: minor)
   end
 
   class << self
