@@ -12,7 +12,14 @@ class EntriesController < ApplicationController
     else
       respond_to do |format|
         format.html { redirect_to root_path, alert: 'Beacon not found!' }
-        format.json { render json: { status: 'failed', error: 'Not found' } }
+        format.json { render json:
+          {
+            status: 'failed',
+            entry: {
+              headline: 'Beacon nicht gefunden'
+            }
+          }
+        }
       end
     end
   end
